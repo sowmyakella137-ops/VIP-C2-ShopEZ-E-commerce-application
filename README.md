@@ -1,6 +1,7 @@
 # 🛒 ShopEZ – Full Stack E-Commerce Web Application
 
 ShopEZ is a full-stack e-commerce web application built using the MERN Stack. It allows users to browse products, manage their cart, place orders, and track purchases. Administrators can manage products, users, orders, and promotional banners through a dedicated admin panel.
+Demo: https://drive.google.com/file/d/1ENvKo5s1MAVyRakjVmHjGeH5n9TOfHTL/view?usp=drivesdk
 
 ## ✨ Features
 
