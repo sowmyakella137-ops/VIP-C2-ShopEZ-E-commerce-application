@@ -25,7 +25,6 @@ export default function BannerSlider() {
     fetchBanners();
   }, []);
 
-  // Set up autoplay
   useEffect(() => {
     if (banners.length <= 1) return;
     const interval = setInterval(() => {
@@ -68,8 +67,7 @@ export default function BannerSlider() {
 
   return (
     <div className="relative bg-slate-900 rounded-3xl overflow-hidden h-[280px] md:h-[420px] group border border-slate-800 shadow-md" id="banner-slider">
-      
-      {/* Slides Inner Area */}
+
       <div className="relative w-full h-full">
         {banners.map((slide, index) => {
           const isCurrent = index === currentSlide;
@@ -80,7 +78,6 @@ export default function BannerSlider() {
                 isCurrent ? "opacity-100 translate-x-0 scale-100 z-10" : "opacity-0 translate-x-12 scale-98 z-0 pointer-events-none"
               }`}
             >
-              {/* Backing image layer with dark gradient overlay */}
               <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/45 to-transparent z-1 bg-cover bg-center">
                 <img
                   src={slide.image}
@@ -90,7 +87,6 @@ export default function BannerSlider() {
                 />
               </div>
 
-              {/* Slate Text overlay content */}
               <div className="absolute inset-y-0 left-0 z-10 flex flex-col justify-center p-8 md:p-16 max-w-2xl bg-gradient-to-r from-black/60 to-transparent">
                 <span className="bg-emerald-500 text-white text-[11px] font-extrabold px-3 py-1 rounded-full w-max uppercase tracking-wider mb-4 shadow-sm shadow-emerald-900">
                   Exclusive Offer
@@ -113,7 +109,7 @@ export default function BannerSlider() {
         })}
       </div>
 
-      {/* Slide Navigation controls */}
+     
       {banners.length > 1 && (
         <>
           <button
@@ -131,7 +127,7 @@ export default function BannerSlider() {
             <ChevronRight className="w-5.5 h-5.5" />
           </button>
 
-          {/* Dots Indicators panel */}
+        
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center space-x-2 z-25">
             {banners.map((_, idx) => (
               <button

@@ -6,7 +6,6 @@ const api = axios.create({
   },
 });
 
-// Request Interceptor: Attach bearer token from localStorage
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("shopez_token");
@@ -20,18 +19,15 @@ api.interceptors.request.use(
   }
 );
 
-// Response Interceptor: Catch 401 unauthorized errors
 api.interceptors.response.use(
   (response) => {
     return response;
   },
   (error) => {
     if (error.response && error.response.status === 401) {
-      // Clear authentication cache
       localStorage.removeItem("shopez_token");
       localStorage.removeItem("shopez_user");
       
-      // Prevent infinite redirect loops if already on login page
       if (!window.location.pathname.includes("/login")) {
         window.location.href = "/login";
       }
