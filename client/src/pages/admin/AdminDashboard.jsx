@@ -197,9 +197,12 @@ export default function AdminDashboard() {
                         </span>
                       </td>
                       <td className="py-3 text-right">
-                        <Link to={`/orders/${ord._id}`} className="inline-flex text-xs font-extrabold text-indigo-600 hover:text-indigo-755 hover:underline">
-                          Inspect Account Detail
-                        </Link>
+                        <Link
+  to="/admin/orders"
+  className="inline-flex text-xs font-extrabold text-indigo-600 hover:text-indigo-755 hover:underline"
+>
+  Manage Order
+</Link>
                       </td>
                     </tr>
                   ))}
